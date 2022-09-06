@@ -30,6 +30,10 @@ jobs:
       - name: "ls cwd"
         if: always()
         run: "ls"
+
+      - name: "pwd"
+        if: always()
+        run: "pwd"
       
       - name: "cat ocvalidate.txt"
         if: always()
