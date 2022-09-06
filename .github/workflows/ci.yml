@@ -25,11 +25,15 @@ jobs:
         working-directory: "./oc"
       
       - name: "Run ocvalidate on EFI/OC/config.plist"
-        run: "./oc/Utilities/ocvalidate/ocvalidate /Users/runner/work/ocvalidate-ci/EFI/OC/config.plist > ocvalidate.txt"
+        run: "./oc/Utilities/ocvalidate/ocvalidate EFI/OC/config.plist > ocvalidate.txt"
       
       - name: "ls cwd"
         if: always()
         run: "ls"
+
+      - name: "ls cwd"
+        if: always()
+        run: "echo $GITHUB_WORKSPACE"
 
       - name: "pwd"
         if: always()
