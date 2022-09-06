@@ -24,6 +24,10 @@ jobs:
         run: "unzip *.zip"
         working-directory: "./oc"
 
+      - name: "Run ocvalidate on EFI/OC/config.plist"
+        run: "Utilities/ocvalidate/ocvalidate $GITHUB_WORKSPACE/EFI/OC/config.plist"
+        
+
 
 
   
