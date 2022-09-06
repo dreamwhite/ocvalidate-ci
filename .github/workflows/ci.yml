@@ -1,4 +1,4 @@
-name: "CI"
+name: "Validate config"
 on:
   push:
     branches:
@@ -6,7 +6,7 @@ on:
       - beta-testing
 jobs:
   validate:
-  name: "Validate config.plist"
+    name: "ocvalidate config.plist"
     runs-on:
       - macos-latest
     steps:
