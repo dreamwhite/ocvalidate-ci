@@ -9,6 +9,9 @@ jobs:
     runs-on:
       - macos-latest
     steps:
+      - name: "checkout to current repo"
+        uses: actions/checkout@v3
+        
       - name: "Download latest OpenCorePkg release"
         uses: robinraju/release-downloader@v1.4
         with:
@@ -20,7 +23,7 @@ jobs:
       - name: "Unzip OpenCorePkg"
         run: "unzip *.zip"
         working-directory: "./oc"
-
+      
       - name: "ls on work-directory"
         run: "ls $GITHUB_WORKSPACE"
 
