@@ -25,8 +25,8 @@ jobs:
         working-directory: "./oc"
 
       - name: "ls repo"
-        run: "ls /home/runner/work/dreamwhite/ocvalidate-ci"
-        
+        run: "ls /home/runner/work"
+
       - name: "Run ocvalidate on EFI/OC/config.plist"
         run: "./oc/Utilities/ocvalidate/ocvalidate $GITHUB_WORKSPACE/EFI/OC/config.plist"
         
