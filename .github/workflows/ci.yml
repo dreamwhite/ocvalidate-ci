@@ -6,7 +6,7 @@ on:
       - beta-testing
 jobs:
   validate:
-    os:
+    runs-on:
       - macos-latest
     steps:
       - name: "Download latest OpenCorePkg release"
