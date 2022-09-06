@@ -27,23 +27,8 @@ jobs:
       - name: "Run ocvalidate on EFI/OC/config.plist"
         run: "./oc/Utilities/ocvalidate/ocvalidate EFI/OC/config.plist > ocvalidate.txt"
       
-      - name: "ls cwd"
-        if: always()
-        run: "ls"
-
-      - name: "ls cwd"
-        if: always()
-        run: "echo $GITHUB_WORKSPACE"
-
-      - name: "pwd"
-        if: always()
-        run: "pwd"
-      
-      - name: "cat ocvalidate.txt"
-        if: always()
-        run: "cat ocvalidate.txt"
-      
       - name: "Upload to artifacts"
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: "ocvalidate.txt"
