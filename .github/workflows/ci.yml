@@ -14,6 +14,7 @@ jobs:
         with:
           repository: "acidanthera/OpenCorePkg"
           latest: true
+          filename: "*-RELEASE.zip"
           out-file-path: "oc"
       #- name: "Unzip OpenCorePkg"
       #  run: "unzip oc/*.zip"
