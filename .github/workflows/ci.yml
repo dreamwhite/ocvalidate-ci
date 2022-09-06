@@ -17,18 +17,12 @@ jobs:
           filename: "*-RELEASE.zip"
           out-file-path: "oc"
       
-      - name: "ls"
-        run: "ls oc"
-      
       - name: "Unzip OpenCorePkg"
         run: "unzip *.zip"
         working-directory: "./oc"
 
-      - name: "pwd repo"
-        run: "pwd"
-
       - name: "Run ocvalidate on EFI/OC/config.plist"
-        run: "./oc/Utilities/ocvalidate/ocvalidate $GITHUB_WORKSPACE/EFI/OC/config.plist"
+        run: "./oc/Utilities/ocvalidate/ocvalidate /Users/runner/work/EFI/OC/config.plist"
         
 
 
