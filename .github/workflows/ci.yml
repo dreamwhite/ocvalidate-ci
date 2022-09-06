@@ -21,6 +21,9 @@ jobs:
         run: "unzip *.zip"
         working-directory: "./oc"
 
+      - name: "ls on work-directory"
+        run: "ls /Users/runner/work"
+
       - name: "Run ocvalidate on EFI/OC/config.plist"
         run: "./oc/Utilities/ocvalidate/ocvalidate /Users/runner/work/EFI/OC/config.plist"
         
