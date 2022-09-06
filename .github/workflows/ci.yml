@@ -1,0 +1,26 @@
+name: "Validate config"
+on:
+  push:
+    branches:
+      - master
+      - beta-testing
+jobs:
+  validate:
+    os:
+      - macos-latest
+    steps:
+      - name: "Download latest OpenCorePkg release"
+        uses: robinraju/release-downloader@v1.4
+        with:
+          repository: "acidanthera/OpenCorePkg"
+          latest: true
+          out-file-path: "oc"
+      - name: "Unzip OpenCorePkg"
+        run: "unzip oc/*.zip"
+        working-directory: "./oc"
+      - name: "ls"
+        run: "ls oc"
+
+
+
+  
