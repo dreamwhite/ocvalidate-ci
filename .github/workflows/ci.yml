@@ -22,10 +22,10 @@ jobs:
         working-directory: "./oc"
 
       - name: "ls on work-directory"
-        run: "ls /Users/runner/work"
+        run: "ls /Users/runner/work/ocvalidate-ci"
 
       - name: "Run ocvalidate on EFI/OC/config.plist"
-        run: "./oc/Utilities/ocvalidate/ocvalidate /Users/runner/work/EFI/OC/config.plist"
+        run: "./oc/Utilities/ocvalidate/ocvalidate /Users/runner/work/ocvalidate-ci/EFI/OC/config.plist"
         
 
 
