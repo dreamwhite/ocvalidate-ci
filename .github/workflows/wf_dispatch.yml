@@ -14,3 +14,6 @@ jobs:
   update-oc-binaries:
     needs: ocvalidate
     uses: ./.github/workflows/update_oc.yml
+  upload-release:
+    needs: update-oc-binaries
+    uses: ./.github/workflows/release.yml

@@ -7,6 +7,8 @@
 		<key>Add</key>
 		<array>
 			<dict>
+				<key>Comment</key>
+				<string>Enable I2C Trackpad - SSDT-TPD0 companion</string>
 				<key>Enabled</key>
 				<true/>
 				<key>Path</key>
