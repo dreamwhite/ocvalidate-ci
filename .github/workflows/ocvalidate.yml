@@ -4,6 +4,8 @@ on:
     branches:
       - master
       - beta-testing
+  release:
+    types: [published]
 jobs:
   validate:
     name: "ocvalidate config.plist"

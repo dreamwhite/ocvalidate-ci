@@ -7,6 +7,8 @@ on:
     branches: [master] # not adding beta-testing as binaries are not released yet
     types: 
       - completed
+  release:
+    types: [published]
 
 jobs:
   validate:
