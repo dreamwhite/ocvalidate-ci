@@ -33,11 +33,11 @@ jobs:
 
       - name: "Update Drivers binaries"
         run: |
-          for file in $GITHUB_WORKSPACE/EFI/OC/Drivers/*; do
+          for file in *; do
             echo $file
-            #cp $file $HOME/EFI/OC/Drivers/$file
+            #cp $GITHUB_WORKSPACE/oc/X64/EFI/Drivers/$file $HOME/EFI/OC/Drivers/$file
           done
-        working-directory: "./oc/X64/EFI/OC/Drivers"
+        working-directory: "EFI/OC/Drivers"
 
       - name: "Remove oc directory"
         run: "rm -rf ./oc"
