@@ -1,0 +1,5 @@
+- name: Run workflows in order
+  uses: benc-uk/workflow-dispatch@v1
+  with:
+    workflow: [Validate config, Update OpenCore binaries, Release]
+    token: ${{ secrets.GITHUB_TOKEN }}
