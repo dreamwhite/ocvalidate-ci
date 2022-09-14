@@ -12,6 +12,6 @@ jobs:
     runs-on: macos-latest
     steps:
       - uses: actions/checkout@v3
-      - uses: ./.github/workflows/ocvalidate.yml
-      - uses: ./.github/workflows/update_oc.yml
-      - uses: ./.github/workflows/release.yml
+      - uses: ./actions/ocvalidate.yml
+      - uses: ./actions/update_oc.yml
+      - uses: ./actions/release.yml
