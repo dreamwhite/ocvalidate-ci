@@ -1,14 +1,5 @@
 name: "Update OpenCore binaries"
 on:
-  push:
-    branches: [master]
-  workflow_run:
-    workflows: [Validate config]
-    branches: [master] # not adding beta-testing as binaries are not released yet
-    types: 
-      - completed
-  release:
-    types: [published, edited]
   workflow_dispatch:
 
 jobs:

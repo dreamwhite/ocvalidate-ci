@@ -1,12 +1,6 @@
 name: "Validate config"
 on:
-  push:
-    branches:
-      - master
-      - beta-testing
   workflow_dispatch:
-  release:
-    types: [published]
 jobs:
   validate:
     name: "ocvalidate config.plist"
