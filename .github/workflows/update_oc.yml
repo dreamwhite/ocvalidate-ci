@@ -9,6 +9,7 @@ on:
       - completed
   release:
     types: [published, edited]
+  workflow_dispatch:
 
 jobs:
   validate:
