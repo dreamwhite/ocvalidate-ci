@@ -4,7 +4,6 @@ on:
 
 jobs:
   validate:
-    if: ${{ github.event.workflow_run.conclusion == 'success' }}
     name: "Update OpenCore binaries"
     runs-on:
       - macos-latest
