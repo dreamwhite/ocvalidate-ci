@@ -9,4 +9,4 @@ on:
 
 jobs:
   run-workflows:
-    uses: dreamwhite/ocvalidate-ci/.github/workflows/ocvalidate.yml@master
+    uses: ./.github/workflows/ocvalidate.yml
