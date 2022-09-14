@@ -29,8 +29,8 @@ jobs:
         run: "cp -r ./oc/X64/EFI/BOOT EFI/"
 
       - name: "Ls github workspace"
-        run: ls $GITHUB_WORKSPACE
-        
+        run: ls oc
+
       - name: "Update OpenCore.efi binary"
         run: "cp -r ./oc/X64/EFI/OC/OpenCore.efi EFI/OC/OpenCore.efi"
 
