@@ -33,8 +33,8 @@ jobs:
 
       - name: "Update Drivers binaries"
         run: |
-          for file in $HOME/EFI/OC/Drivers/*; do
-            ls $HOME
+          for file in $GITHUB_WORKSPACE/EFI/OC/Drivers/*; do
+            ls $GITHUB_WORKSPACE
             printf '%s\n' "$file"
             # cp $file $HOME/EFI/OC/Drivers/$file
           done
