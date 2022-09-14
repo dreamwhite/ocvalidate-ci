@@ -10,16 +10,17 @@ on:
 jobs:
   run-workflows:
     runs-on: macos-latest
-    steps:
-      - name: "Checkout to current repo"
-        uses: actions/checkout@v3
+    steps:        
       - name: "Validate config.plist"
         id: ocvalidate
+        uses: actions/checkout@v3
         uses: ./.github/workflows/ocvalidate.yml
       - name: "Update OpenCore binaries"
         id: update-oc-binaries
         if: failure() && steps.ocvalidate.outcome != 'success'
+        uses: actions/checkout@v3
         uses: ./.github/workflows/update_oc.yml
       - name: "Upload to release"
         if: failure() && steps.update-oc-binaries.outcome != 'success'
+        uses: actions/checkout@v3
         uses: ./.github/workflows/release.yml
