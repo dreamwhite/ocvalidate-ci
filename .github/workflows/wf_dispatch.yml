@@ -8,21 +8,19 @@ on:
   workflow_dispatch:
 
 jobs:
-  call-ocvalidate:
-    name: "Validate config.plist"
-    id: ocvalidate
-    uses: ./.github/workflows/ocvalidate.yml
-    secrets: inherit
-
-  call-update-oc:
-    name: "Update OpenCore binaries"
-    id: update-oc-binaries
-    if: failure() && steps.ocvalidate.outcome != 'success'
-    uses: ./.github/workflows/update_oc.yml
-    secrets: inherit
-
-  call-release:
-    name: "Upload to release"
-    if: failure() && steps.update-oc-binaries.outcome != 'success'
-    uses: ./.github/workflows/release.yml
-    secrets: inherit
+  run-workflows:
+    runs-on: macos-latest
+    steps:
+      - name: "Validate config.plist"
+        id: ocvalidate
+        uses: ./.github/workflows/ocvalidate.yml
+        secrets: inherit
+    - name: "Update OpenCore binaries"
+      id: update-oc-binaries
+      if: failure() && steps.ocvalidate.outcome != 'success'
+      uses: ./.github/workflows/update_oc.yml
+      secrets: inherit
+    - name: "Upload to release"
+      if: failure() && steps.update-oc-binaries.outcome != 'success'
+      uses: ./.github/workflows/release.yml
+      secrets: inherit
