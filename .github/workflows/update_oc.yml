@@ -33,7 +33,7 @@ jobs:
 
       - name: "Update Drivers binaries"
         run: |
-          for file in EFI/OC/Drivers/; do
+          for file in EFI/OC/Drivers/*; do
             echo $file
             #cp ./oc/X64/EFI/OC/$file EFI/OC/Drivers/$file
           done
