@@ -37,7 +37,8 @@ jobs:
       - name: "Update Drivers binaries"
         run: |
           for file in *; do
-            if [ $file != 'HfsPlus' ] then
+            if [ $file != 'HfsPlus.efi' ]
+            then
               rsync $GITHUB_WORKSPACE/oc/X64/EFI/OC/Drivers/$file $file
             fi
           done
