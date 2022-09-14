@@ -6,7 +6,11 @@ on:
   release:
     types: [published]
   workflow_dispatch:
+  workflow_call:
 
 jobs:
-  run-workflows:
+  ocvalidate:
     uses: ./.github/workflows/ocvalidate.yml
+  update-oc-binaries:
+    needs: ocvalidate
+    uses: ./.github/workflows/update_oc.yml
