@@ -12,7 +12,5 @@ jobs:
     runs-on: macos-latest
     steps:
       - uses: actions/checkout@v3
-        with:
-          repo: ${{ github.repository }}
       - name: Local Action Call
-        uses: ./.github/workflows/ocvalidate.yml
+        uses: dreamwhite/ocvalidate-ci/.github/workflows/ocvalidate.yml@master
