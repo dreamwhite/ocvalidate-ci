@@ -15,12 +15,12 @@ jobs:
         id: ocvalidate
         uses: ./.github/workflows/ocvalidate.yml
         secrets: inherit
-    - name: "Update OpenCore binaries"
-      id: update-oc-binaries
-      if: failure() && steps.ocvalidate.outcome != 'success'
-      uses: ./.github/workflows/update_oc.yml
-      secrets: inherit
-    - name: "Upload to release"
-      if: failure() && steps.update-oc-binaries.outcome != 'success'
-      uses: ./.github/workflows/release.yml
-      secrets: inherit
+      - name: "Update OpenCore binaries"
+        id: update-oc-binaries
+        if: failure() && steps.ocvalidate.outcome != 'success'
+        uses: ./.github/workflows/update_oc.yml
+        secrets: inherit
+      - name: "Upload to release"
+        if: failure() && steps.update-oc-binaries.outcome != 'success'
+        uses: ./.github/workflows/release.yml
+        secrets: inherit
