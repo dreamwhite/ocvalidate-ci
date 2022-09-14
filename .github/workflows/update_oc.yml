@@ -1,6 +1,6 @@
 name: "Update OpenCore binaries"
 on:
-  workflow_dispatch:
+  workflow_call:
 
 jobs:
   validate:

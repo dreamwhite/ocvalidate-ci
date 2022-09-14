@@ -1,6 +1,6 @@
 name: "Validate config"
 on:
-  workflow_dispatch:
+  workflow_call:
 jobs:
   validate:
     name: "ocvalidate config.plist"
