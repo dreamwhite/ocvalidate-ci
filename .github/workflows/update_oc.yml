@@ -3,8 +3,7 @@ on:
   push:
     branches: [master]
   workflow_run:
-    workflows:
-      - "Validate config"
+    workflows: [Validate config]
     branches: [master] # not adding beta-testing as binaries are not released yet
     types: 
       - completed
