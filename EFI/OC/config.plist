@@ -7,6 +7,8 @@
 		<key>Add</key>
 		<array>
 			<dict>
+				<key>Comment</key>
+				<string>Custom SSDT for USB Map</string>
 				<key>Enabled</key>
 				<true/>
 				<key>Path</key>
