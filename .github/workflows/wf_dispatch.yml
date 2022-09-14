@@ -16,4 +16,4 @@ jobs:
         run: ls .github/workflows
       - name: Local Action Call
         id: ocvalidate
-        uses: ./.github/workflows/ocvalidate.yml
+        uses: .github/workflows/ocvalidate.yml
