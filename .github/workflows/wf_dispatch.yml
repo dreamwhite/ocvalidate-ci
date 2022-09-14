@@ -1,5 +1,28 @@
-- name: Run workflows in order
-  uses: benc-uk/workflow-dispatch@v1
-  with:
-    workflow: [Validate config, Update OpenCore binaries, Release]
-    token: ${{ secrets.GITHUB_TOKEN }}
+name: Workflow dispatch
+
+on:
+  push:
+    branches: [ master ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: macos-latest
+    steps:
+    - name: Run "Validate config" workflow
+      uses: benc-uk/workflow-dispatch@v1
+      with:
+        workflow: Validate config
+        token: ${{ secrets.GITHUB_TOKEN }}
+
+    - name: Run "Update OpenCore binaries" workflow
+      uses: benc-uk/workflow-dispatch@v1
+      with:
+        workflow: Update OpenCore binaries
+        token: ${{ secrets.GITHUB_TOKEN }}
+
+    - name: Run "Release" workflow
+      uses: benc-uk/workflow-dispatch@v1
+      with:
+        workflow: Release
+        token: ${{ secrets.GITHUB_TOKEN }}
