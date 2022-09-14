@@ -35,7 +35,7 @@ jobs:
         run: |
           for file in *; do
             echo $file
-            cp $GITHUB_WORKSPACE/oc/X64/EFI/Drivers/$file $file
+            cp $GITHUB_WORKSPACE/oc/X64/EFI/OC/Drivers/$file $file
           done
         working-directory: "EFI/OC/Drivers"
 
