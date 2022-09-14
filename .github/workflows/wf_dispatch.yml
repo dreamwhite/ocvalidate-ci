@@ -12,8 +12,5 @@ jobs:
     runs-on: macos-latest
     steps:
       - uses: actions/checkout@v3
-      - name: ls .github/workflows
-        run: ls .github/workflows
       - name: Local Action Call
-        id: ocvalidate
-        uses: .github/workflows/ocvalidate.yml
+        uses: ./.github/workflows/ocvalidate.yml
