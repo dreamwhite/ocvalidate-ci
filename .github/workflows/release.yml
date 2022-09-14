@@ -2,7 +2,6 @@ name: Release
 on:
   workflow_run:
     workflows:
-      - "Validate config"
       - "Update OpenCore binaries"
     branches: [master] # not adding beta-testing as binaries are not released yet
     types: 
