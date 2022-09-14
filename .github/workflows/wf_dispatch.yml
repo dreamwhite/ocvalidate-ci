@@ -9,8 +9,4 @@ on:
 
 jobs:
   run-workflows:
-    runs-on: macos-latest
-    steps:
-      - uses: actions/checkout@v3
-      - name: Local Action Call
-        uses: dreamwhite/ocvalidate-ci/.github/workflows/ocvalidate.yml@master
+    uses: dreamwhite/ocvalidate-ci/.github/workflows/ocvalidate.yml@master
