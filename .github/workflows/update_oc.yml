@@ -34,9 +34,8 @@ jobs:
       - name: "Update Drivers binaries"
         run: |
           for file in $GITHUB_WORKSPACE/EFI/OC/Drivers/*; do
-            ls $GITHUB_WORKSPACE
-            printf '%s\n' "$file"
-            # cp $file $HOME/EFI/OC/Drivers/$file
+            echo $file
+            #cp $file $HOME/EFI/OC/Drivers/$file
           done
         working-directory: "./oc/X64/EFI/OC/Drivers"
 
