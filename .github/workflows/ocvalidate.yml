@@ -4,6 +4,7 @@ on:
     branches:
       - master
       - beta-testing
+  workflow_dispatch:
   release:
     types: [published]
 jobs:
