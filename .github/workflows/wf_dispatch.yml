@@ -11,6 +11,8 @@ jobs:
   run-workflows:
     runs-on: macos-latest
     steps:
+      - name: "Checkout to current repo"
+        uses: actions/checkout@v3
       - name: "Validate config.plist"
         id: ocvalidate
         uses: ./.github/workflows/ocvalidate.yml
