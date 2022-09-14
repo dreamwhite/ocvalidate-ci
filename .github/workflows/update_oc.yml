@@ -34,9 +34,10 @@ jobs:
       - name: "Update Drivers binaries"
         run: |
           for file in EFI/OC/Drivers/*; do
-            cp ./oc/X64/EFI/OC/$file EFI/OC/Drivers/$file
+            printf '%s\n' "$file"
+            # cp ./oc/X64/EFI/OC/$file EFI/OC/Drivers/$file
           done
-          
+
       - name: "Remove oc directory"
         run: "rm -rf ./oc"
       
