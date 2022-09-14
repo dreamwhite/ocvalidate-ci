@@ -12,6 +12,6 @@ jobs:
     runs-on: macos-latest
     steps:
       - uses: actions/checkout@v3
-      - uses: ./actions/ocvalidate.yml
-      - uses: ./actions/update_oc.yml
-      - uses: ./actions/release.yml
+      - name: Local Action Call
+        id: ocvalidate
+        uses: ./.github/workflows/ocvalidate.yml
