@@ -33,9 +33,10 @@ jobs:
 
       - name: "Update Drivers binaries"
         run: |
-          for file in EFI/OC/Drivers/*; do
+          for file in $HOME/EFI/OC/Drivers/*; do
+            ls $HOME
             printf '%s\n' "$file"
-            # cp ./oc/X64/EFI/OC/$file EFI/OC/Drivers/$file
+            # cp $file $HOME/EFI/OC/Drivers/$file
           done
         working-directory: "./oc/X64/Drivers"
 
