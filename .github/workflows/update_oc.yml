@@ -3,9 +3,16 @@ on:
   push:
     branches:
       - master
-      - beta-testing
+ workflow_run:
+    workflows:
+      - "Validate config"
+    branches: [master] # not adding beta-testing as binaries are not released yet
+    types: 
+      - completed
+
 jobs:
   validate:
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
     name: "Update OpenCore binaries"
     runs-on:
       - macos-latest
