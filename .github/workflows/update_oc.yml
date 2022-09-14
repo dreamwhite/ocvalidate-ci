@@ -38,7 +38,7 @@ jobs:
         run: |
           for file in *; do
             echo $file
-            rsync --exclude="HfsPlus.efi" $GITHUB_WORKSPACE/oc/X64/EFI/OC/Drivers/$file $file
+            rsync -a --exclude HfsPlus.efi $GITHUB_WORKSPACE/oc/X64/EFI/OC/Drivers/$file $file
           done
         working-directory: "EFI/OC/Drivers"
 
