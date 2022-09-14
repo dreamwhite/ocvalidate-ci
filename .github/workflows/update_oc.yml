@@ -1,8 +1,7 @@
 name: "Update OpenCore binaries"
 on:
   push:
-    branches:
-      - master
+    branches: [master]
  workflow_run:
     workflows:
       - "Validate config"
